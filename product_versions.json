@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2025-11-11T08:31:39.479841+00:00Z",
+  "versions": {
+    "Annotation": {
+      "npm": null,
+      "nuget": "25.11.0",
+      "pypi": null,
+      "releases": "25.6"
+    },
+    "Assembly": {
+      "npm": null,
+      "nuget": "25.6.0",
+      "pypi": "25.5.1",
+      "releases": "25.6"
+    },
+    "Classification": {
+      "npm": null,
+      "nuget": "21.1.0",
+      "pypi": null,
+      "releases": null
+    },
+    "Comparison": {
+      "npm": "25.6.0",
+      "nuget": "25.10.0",
+      "pypi": "25.6",
+      "releases": "25.5"
+    },
+    "Conversion": {
+      "npm": "25.4.1",
+      "nuget": "25.10.0",
+      "pypi": "24.12",
+      "releases": "25.9"
+    },
+    "Editor": {
+      "npm": "25.4.0",
+      "nuget": "25.7.0",
+      "pypi": null,
+      "releases": "25.3"
+    },
+    "Markdown": {
+      "npm": null,
+      "nuget": "25.9.0",
+      "pypi": null,
+      "releases": null
+    },
+    "Merger": {
+      "npm": "24.12.0",
+      "nuget": "25.9.0",
+      "pypi": "25.3",
+      "releases": "25.9"
+    },
+    "Metadata": {
+      "npm": "24.7.0",
+      "nuget": "25.10.0",
+      "pypi": "25.4",
+      "releases": "24.12"
+    },
+    "Parser": {
+      "npm": null,
+      "nuget": "25.10.0",
+      "pypi": null,
+      "releases": "25.5"
+    },
+    "Redaction": {
+      "npm": null,
+      "nuget": "25.9.0",
+      "pypi": "25.10",
+      "releases": "25.5"
+    },
+    "Search": {
+      "npm": "24.7.0",
+      "nuget": "25.9.0",
+      "pypi": null,
+      "releases": "25.4"
+    },
+    "Signature": {
+      "npm": "24.12.0",
+      "nuget": "25.6.0",
+      "pypi": "25.4",
+      "releases": "24.7"
+    },
+    "Total": {
+      "npm": null,
+      "nuget": "25.9.0",
+      "pypi": "25.10.0",
+      "releases": "25.10"
+    },
+    "Viewer": {
+      "npm": "24.8.0",
+      "nuget": "25.9.0",
+      "pypi": "24.9",
+      "releases": "25.9"
+    },
+    "Watermark": {
+      "npm": "25.7.0",
+      "nuget": "25.10.0",
+      "pypi": "25.3",
+      "releases": "25.9"
+    }
+  }
+}

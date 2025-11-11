@@ -1,0 +1,58 @@
+name: Product Versions Check
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate latest versions
+        run: python build_product_grid.py
+        working-directory: ./ # repository root
+
+      - name: Prepare previous state
+        run: |
+          if git show HEAD:product_versions.json > old.json 2>/dev/null; then
+            echo "Previous product_versions.json captured"
+          else
+            echo "{}" > old.json
+          fi
+
+      - name: Compute version change summary
+        run: |
+          python compute_version_changes.py --old old.json --new product_versions.json --out version_changes.md
+
+      - name: Commit changes if versions updated
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Only commit if versions changed (ignore timestamp-only changes)
+          if ! grep -q "^### " version_changes.md; then
+            echo "No version changes detected. Skipping commit."
+            exit 0
+          fi
+          git add product_versions.json PRODUCT_VERSIONS.md || true
+          git commit -m "chore: update product versions [skip ci]"
+          git push
+

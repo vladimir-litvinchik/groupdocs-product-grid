@@ -1,0 +1,59 @@
+name: Product Versions - Create Issue on Update
+
+on:
+  push:
+    paths:
+      - "product_versions.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Prepare previous state
+        run: |
+          if git show HEAD~1:product_versions.json > old.json 2>/dev/null; then
+            echo "Loaded previous product_versions.json"
+          else
+            echo "{}" > old.json
+          fi
+
+      - name: Compute version change summary
+        run: |
+          python compute_version_changes.py --old old.json --new product_versions.json --out version_changes.md
+
+      - name: Create issue for version update
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('version_changes.md', 'utf8');
+            if (body.includes('No changes detected.')) {
+              core.info('No meaningful changes detected; skipping issue creation.');
+              return;
+            }
+            const today = new Date().toISOString().slice(0,10);
+            const { data: issue } = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Product versions updated - ${today}`,
+              body,
+              labels: ['automation','versions']
+            });
+            core.info(`Created issue #${issue.number}`)
+
