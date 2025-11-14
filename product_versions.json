@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-13T06:25:47.921631+00:00Z",
+  "generatedAt": "2025-11-14T06:25:31.774996+00:00Z",
   "versions": {
     "Annotation": {
       "npm": null,
@@ -33,7 +33,7 @@
     },
     "Editor": {
       "npm": "25.4.0",
-      "nuget": "25.7.0",
+      "nuget": "25.11.0",
       "pypi": null,
       "releases": "25.3"
     },
