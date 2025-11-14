@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -45,14 +46,15 @@ jobs:
 
       - name: Commit changes if versions updated
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ github.repository }}.git
           # Only commit if versions changed (ignore timestamp-only changes)
           if ! grep -q "^### " version_changes.md; then
             echo "No version changes detected. Skipping commit."
             exit 0
           fi
           git add product_versions.json PRODUCT_VERSIONS.md || true
-          git commit -m "chore: update product versions [skip ci]"
-          git push
+          git commit -m "chore: update product versions"
+          git push origin HEAD
 
