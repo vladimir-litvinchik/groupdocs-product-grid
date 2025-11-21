@@ -162,14 +162,16 @@ def get_npm_latest(product: str):
 def markdown_table(rows):
     header = [
         "Product",
-        "NuGet (.NET)",
-        "Releases (Java)",
-        "PyPI (Python via .NET)",
-        "NPM (Node.js via Java)",
+        ".NET",
+        "Java",
+        "Python via .NET",
+        "Node.js via Java",
     ]
     lines = []
     lines.append(f"| {' | '.join(header)} |")
-    lines.append(f"| {' | '.join(['---'] * len(header))} |")
+    # First column left-aligned, rest center-aligned
+    separators = ["---"] + [":---:"] * (len(header) - 1)
+    lines.append(f"| {' | '.join(separators)} |")
     for r in rows:
         nuget_ver = r.get("nuget")
         releases_ver = r.get("releases")
@@ -189,10 +191,10 @@ def markdown_table(rows):
 def console_table(rows):
     header = [
         "Product",
-        "NuGet (.NET)",
-        "Releases (Java)",
-        "PyPI (Python via .NET)",
-        "NPM (Node.js via Java)",
+        ".NET",
+        "Java",
+        "Python via .NET",
+        "Node.js via Java",
     ]
     # Prepare raw version cells (no links) for console display
     data_rows = []
