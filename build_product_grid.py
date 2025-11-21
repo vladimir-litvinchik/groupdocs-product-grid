@@ -27,6 +27,16 @@ PRODUCTS = [
     "watermark",
 ]
 
+# Additional NuGet-only products (package_id: display_name)
+ADDITIONAL_NUGET_PRODUCTS = {
+    "GroupDocs.Viewer.UI": "Viewer.UI",
+    "GroupDocs.Editor.UI.Api": "Editor.UI",
+    "GroupDocs.Comparison.UI": "Comparison.UI",
+    "GroupDocs.Conversion-CLI": "Conversion-CLI",
+    "GroupDocs.Viewer-CLI": "Viewer-CLI",
+    "GroupDocs.Metadata-CLI": "Metadata-CLI",
+}
+
 USER_AGENT = "groupdocs-product-grid/1.0 (+https://releases.groupdocs.com/)"
 TIMEOUT = 15
 
@@ -67,8 +77,9 @@ def safe_get_text(url: str):
         return None
 
 
-def get_nuget_latest(product: str):
-    package_id = f"groupdocs.{product}"
+def get_nuget_latest(product: str, package_id: str = None):
+    if package_id is None:
+        package_id = f"groupdocs.{product}"
     url = f"https://api.nuget.org/v3-flatcontainer/{package_id}/index.json"
     data = safe_get_json(url)
     if not data:
@@ -164,7 +175,9 @@ def markdown_table(rows):
         releases_ver = r.get("releases")
         pypi_ver = r.get("pypi")
         npm_ver = r.get("npm")
-        nuget_cell = f"[{nuget_ver}](https://www.nuget.org/packages/groupdocs.{r['product'].lower()}/{nuget_ver})" if nuget_ver else ""
+        # Use custom package_id if provided, otherwise use default format
+        nuget_package_id = r.get("nuget_package_id") or f"groupdocs.{r['product'].lower()}"
+        nuget_cell = f"[{nuget_ver}](https://www.nuget.org/packages/{nuget_package_id}/{nuget_ver})" if nuget_ver else ""
         releases_cell = f"[{releases_ver}](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-{r['product'].lower()}/{releases_ver}/)" if releases_ver else ""
         pypi_pkg = f"groupdocs-{r['product'].lower()}-net"
         pypi_cell = f"[{pypi_ver}](https://pypi.org/project/{pypi_pkg}/{pypi_ver}/)" if pypi_ver else ""
@@ -223,14 +236,47 @@ def build_row(product: str):
     }
 
 
+def build_nuget_only_row(package_id: str, display_name: str):
+    print(f"Checking {display_name} (NuGet only)...", flush=True)
+    nuget = get_nuget_latest("", package_id=package_id)
+    print(f"Done {display_name}", flush=True)
+    return {
+        "product": display_name,
+        "nuget": nuget,
+        "releases": None,
+        "pypi": None,
+        "npm": None,
+        "nuget_package_id": package_id,
+    }
+
+
 def main():
-    rows = []
+    main_rows = []
+    additional_rows = []
     # Parallelize across products for speed
-    with concurrent.futures.ThreadPoolExecutor(max_workers=min(16, len(PRODUCTS) or 1)) as ex:
-        future_to_product = {ex.submit(build_row, p): p for p in PRODUCTS}
-        for fut in concurrent.futures.as_completed(future_to_product):
-            rows.append(fut.result())
-    rows.sort(key=lambda r: r["product"])
+    main_tasks = {}
+    additional_tasks = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(16, len(PRODUCTS) + len(ADDITIONAL_NUGET_PRODUCTS) or 1)) as ex:
+        # Submit regular products
+        for p in PRODUCTS:
+            main_tasks[ex.submit(build_row, p)] = "main"
+        # Submit additional NuGet-only products
+        for package_id, display_name in ADDITIONAL_NUGET_PRODUCTS.items():
+            additional_tasks[ex.submit(build_nuget_only_row, package_id, display_name)] = "additional"
+        # Collect results
+        for fut in concurrent.futures.as_completed(main_tasks):
+            main_rows.append(fut.result())
+        for fut in concurrent.futures.as_completed(additional_tasks):
+            additional_rows.append(fut.result())
+    main_rows.sort(key=lambda r: r["product"])
+    # Sort additional products: UI first, then CLI, alphabetically within each type
+    def additional_sort_key(r):
+        product_name = r["product"]
+        # Check if it's a UI product (ends with .UI or contains .UI)
+        is_ui = ".UI" in product_name or product_name.endswith("UI")
+        # Return tuple: (0 for UI, 1 for CLI), then product name for alphabetical sorting
+        return (0 if is_ui else 1, product_name)
+    additional_rows.sort(key=additional_sort_key)
 
     now = datetime.datetime.now(datetime.UTC).isoformat() + "Z"
     heading = (
@@ -238,19 +284,27 @@ def main():
         f"Generated on {now}\n\n"
         "Source: https://releases.groupdocs.com/\n\n"
     )
-    table = markdown_table(rows)
+    
+    # Generate two separate tables with headers
+    main_table = markdown_table(main_rows)
+    additional_table = markdown_table(additional_rows)
+    
+    content = heading + "## Main Products\n\n" + main_table + "\n\n## Derived Products\n\n" + additional_table + "\n"
 
     script_dir = Path(__file__).resolve().parent
     out_path = (script_dir / "PRODUCT_VERSIONS.md").resolve()
-    out_path.write_text(heading + table + "\n", encoding="utf-8")
+    out_path.write_text(content, encoding="utf-8")
     print(f"Wrote {out_path}")
 
-    # Also print a console-friendly table
-    print("\nProduct grid:\n")
-    print(console_table(rows))
+    # Also print console-friendly tables
+    print("\nMain Products:\n")
+    print(console_table(main_rows))
+    print("\nDerived Products:\n")
+    print(console_table(additional_rows))
 
-    # Write JSON state for automation workflows
-    versions_map = {r["product"]: {"nuget": r.get("nuget"), "releases": r.get("releases"), "pypi": r.get("pypi"), "npm": r.get("npm")} for r in rows}
+    # Write JSON state for automation workflows (combined for change detection)
+    all_rows = main_rows + additional_rows
+    versions_map = {r["product"]: {"nuget": r.get("nuget"), "releases": r.get("releases"), "pypi": r.get("pypi"), "npm": r.get("npm")} for r in all_rows}
     json_state = {"generatedAt": now, "versions": versions_map}
     json_path = (script_dir / "product_versions.json").resolve()
     json_path.write_text(json.dumps(json_state, indent=2, sort_keys=True) + "\n", encoding="utf-8")
