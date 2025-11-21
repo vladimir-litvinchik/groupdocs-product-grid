@@ -48,7 +48,7 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ github.repository }}.git
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.WRITE_PAT }}@github.com/${{ github.repository }}.git
           # Only commit if versions changed (ignore timestamp-only changes)
           if ! grep -q "^### " version_changes.md; then
             echo "No version changes detected. Skipping commit."
