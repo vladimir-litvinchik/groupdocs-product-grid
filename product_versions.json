@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-21T14:10:05.005678+00:00Z",
+  "generatedAt": "2025-11-22T06:22:18.012886+00:00Z",
   "versions": {
     "Annotation": {
       "npm": null,
@@ -25,17 +25,35 @@
       "pypi": "25.6",
       "releases": "25.5"
     },
+    "Comparison.UI": {
+      "npm": null,
+      "nuget": "6.0.21",
+      "pypi": null,
+      "releases": null
+    },
     "Conversion": {
       "npm": "25.4.1",
       "nuget": "25.10.0",
       "pypi": "24.12",
       "releases": "25.9"
     },
+    "Conversion-CLI": {
+      "npm": null,
+      "nuget": "25.10.0",
+      "pypi": null,
+      "releases": null
+    },
     "Editor": {
       "npm": "25.4.0",
       "nuget": "25.11.0",
       "pypi": null,
       "releases": "25.3"
+    },
+    "Editor.UI": {
+      "npm": null,
+      "nuget": "8.0.5",
+      "pypi": null,
+      "releases": null
     },
     "Markdown": {
       "npm": null,
@@ -54,6 +72,12 @@
       "nuget": "25.10.0",
       "pypi": "25.4",
       "releases": "25.11"
+    },
+    "Metadata-CLI": {
+      "npm": null,
+      "nuget": "25.10.0",
+      "pypi": null,
+      "releases": null
     },
     "Parser": {
       "npm": null,
@@ -90,6 +114,18 @@
       "nuget": "25.9.0",
       "pypi": "24.9",
       "releases": "25.9"
+    },
+    "Viewer-CLI": {
+      "npm": null,
+      "nuget": "25.11.0",
+      "pypi": null,
+      "releases": null
+    },
+    "Viewer.UI": {
+      "npm": null,
+      "nuget": "8.1.2",
+      "pypi": null,
+      "releases": null
     },
     "Watermark": {
       "npm": "25.7.0",

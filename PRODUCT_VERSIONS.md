@@ -1,11 +1,13 @@
 # GroupDocs Product Versions (Latest)
 
-Generated on 2025-11-21T14:10:05.005678+00:00Z
+Generated on 2025-11-22T06:22:18.012886+00:00Z
 
 Source: https://releases.groupdocs.com/
 
-| Product | NuGet (.NET) | Releases (Java) | PyPI (Python via .NET) | NPM (Node.js via Java) |
-| --- | --- | --- | --- | --- |
+## Main Products
+
+| Product | .NET | Java | Python via .NET | Node.js via Java |
+| --- | :---: | :---: | :---: | :---: |
 | Annotation | [25.11.0](https://www.nuget.org/packages/groupdocs.annotation/25.11.0) | [25.6](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-annotation/25.6/) |  |  |
 | Assembly | [25.6.0](https://www.nuget.org/packages/groupdocs.assembly/25.6.0) | [25.6](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-assembly/25.6/) | [25.5.1](https://pypi.org/project/groupdocs-assembly-net/25.5.1/) |  |
 | Classification | [21.1.0](https://www.nuget.org/packages/groupdocs.classification/21.1.0) |  |  |  |
@@ -22,3 +24,14 @@ Source: https://releases.groupdocs.com/
 | Total | [25.9.0](https://www.nuget.org/packages/groupdocs.total/25.9.0) | [25.10](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-total/25.10/) | [25.10.0](https://pypi.org/project/groupdocs-total-net/25.10.0/) |  |
 | Viewer | [25.9.0](https://www.nuget.org/packages/groupdocs.viewer/25.9.0) | [25.9](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-viewer/25.9/) | [24.9](https://pypi.org/project/groupdocs-viewer-net/24.9/) | [24.8.0](https://www.npmjs.com/package/@groupdocs/groupdocs.viewer/v/24.8.0) |
 | Watermark | [25.10.0](https://www.nuget.org/packages/groupdocs.watermark/25.10.0) | [25.9](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-watermark/25.9/) | [25.3](https://pypi.org/project/groupdocs-watermark-net/25.3/) | [25.7.0](https://www.npmjs.com/package/@groupdocs/groupdocs.watermark/v/25.7.0) |
+
+## Derived Products
+
+| Product | .NET | Java | Python via .NET | Node.js via Java |
+| --- | :---: | :---: | :---: | :---: |
+| Comparison.UI | [6.0.21](https://www.nuget.org/packages/GroupDocs.Comparison.UI/6.0.21) |  |  |  |
+| Editor.UI | [8.0.5](https://www.nuget.org/packages/GroupDocs.Editor.UI.Api/8.0.5) |  |  |  |
+| Viewer.UI | [8.1.2](https://www.nuget.org/packages/GroupDocs.Viewer.UI/8.1.2) |  |  |  |
+| Conversion-CLI | [25.10.0](https://www.nuget.org/packages/GroupDocs.Conversion-CLI/25.10.0) |  |  |  |
+| Metadata-CLI | [25.10.0](https://www.nuget.org/packages/GroupDocs.Metadata-CLI/25.10.0) |  |  |  |
+| Viewer-CLI | [25.11.0](https://www.nuget.org/packages/GroupDocs.Viewer-CLI/25.11.0) |  |  |  |
