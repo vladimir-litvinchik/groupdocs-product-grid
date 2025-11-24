@@ -8,7 +8,7 @@ from pathlib import Path
 import requests
 
 
-PRODUCTS = [
+MAIN_PRODUCTS = [
     "annotation",
     "assembly",
     "classification",
@@ -27,8 +27,8 @@ PRODUCTS = [
     "watermark",
 ]
 
-# Additional NuGet-only products (package_id: display_name)
-ADDITIONAL_NUGET_PRODUCTS = {
+# Derived .NET-only products (package_id: display_name)
+DERIVED_PRODUCTS = {
     "GroupDocs.Viewer.UI": "Viewer.UI",
     "GroupDocs.Editor.UI.Api": "Editor.UI",
     "GroupDocs.Comparison.UI": "Comparison.UI",
@@ -77,7 +77,7 @@ def safe_get_text(url: str):
         return None
 
 
-def get_nuget_latest(product: str, package_id: str = None):
+def get_net_latest(product: str, package_id: str = None):
     if package_id is None:
         package_id = f"groupdocs.{product}"
     url = f"https://api.nuget.org/v3-flatcontainer/{package_id}/index.json"
@@ -106,7 +106,7 @@ def compare_release_versions_key(ver: str):
     return (y, m, h)
 
 
-def get_releases_latest(product: str):
+def get_java_latest(product: str):
     url = f"https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-{product}/"
     text = safe_get_text(url)
     if not text:
@@ -118,7 +118,7 @@ def get_releases_latest(product: str):
     return versions[-1]
 
 
-def get_pypi_latest(product: str):
+def get_python_net_latest(product: str):
     pkg = f"groupdocs-{product}-net"
     url = f"https://pypi.org/pypi/{pkg}/json"
     data = safe_get_json(url)
@@ -142,7 +142,7 @@ def _semverish_key(ver: str):
     return tuple(key)
 
 
-def get_npm_latest(product: str):
+def get_nodejs_java_latest(product: str):
     # encoded @groupdocs/groupdocs.{product} => @groupdocs%2Fgroupdocs.{product}
     url = f"https://registry.npmjs.org/@groupdocs%2Fgroupdocs.{product}"
     data = safe_get_json(url)
@@ -173,18 +173,18 @@ def markdown_table(rows):
     separators = ["---"] + [":---:"] * (len(header) - 1)
     lines.append(f"| {' | '.join(separators)} |")
     for r in rows:
-        nuget_ver = r.get("nuget")
-        releases_ver = r.get("releases")
-        pypi_ver = r.get("pypi")
-        npm_ver = r.get("npm")
+        net_ver = r.get("net")
+        java_ver = r.get("java")
+        python_net_ver = r.get("python-net")
+        nodejs_java_ver = r.get("nodejs-java")
         # Use custom package_id if provided, otherwise use default format
-        nuget_package_id = r.get("nuget_package_id") or f"groupdocs.{r['product'].lower()}"
-        nuget_cell = f"[{nuget_ver}](https://www.nuget.org/packages/{nuget_package_id}/{nuget_ver})" if nuget_ver else ""
-        releases_cell = f"[{releases_ver}](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-{r['product'].lower()}/{releases_ver}/)" if releases_ver else ""
-        pypi_pkg = f"groupdocs-{r['product'].lower()}-net"
-        pypi_cell = f"[{pypi_ver}](https://pypi.org/project/{pypi_pkg}/{pypi_ver}/)" if pypi_ver else ""
-        npm_cell = f"[{npm_ver}](https://www.npmjs.com/package/@groupdocs/groupdocs.{r['product'].lower()}/v/{npm_ver})" if npm_ver else ""
-        lines.append(f"| {r['product']} | {nuget_cell} | {releases_cell} | {pypi_cell} | {npm_cell} |")
+        net_package_id = r.get("net_package_id") or f"groupdocs.{r['product'].lower()}"
+        net_cell = f"[{net_ver}](https://www.nuget.org/packages/{net_package_id}/{net_ver})" if net_ver else ""
+        java_cell = f"[{java_ver}](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-{r['product'].lower()}/{java_ver}/)" if java_ver else ""
+        python_net_pkg = f"groupdocs-{r['product'].lower()}-net"
+        python_net_cell = f"[{python_net_ver}](https://pypi.org/project/{python_net_pkg}/{python_net_ver}/)" if python_net_ver else ""
+        nodejs_java_cell = f"[{nodejs_java_ver}](https://www.npmjs.com/package/@groupdocs/groupdocs.{r['product'].lower()}/v/{nodejs_java_ver})" if nodejs_java_ver else ""
+        lines.append(f"| {r['product']} | {net_cell} | {java_cell} | {python_net_cell} | {nodejs_java_cell} |")
     return "\n".join(lines)
 
 
@@ -201,10 +201,10 @@ def console_table(rows):
     for r in rows:
         data_rows.append([
             r["product"],
-            r.get("nuget") or "",
-            r.get("releases") or "",
-            r.get("pypi") or "",
-            r.get("npm") or ""
+            r.get("net") or "",
+            r.get("java") or "",
+            r.get("python-net") or "",
+            r.get("nodejs-java") or ""
         ])
     # Compute column widths
     widths = [len(h) for h in header]
@@ -224,74 +224,73 @@ def console_table(rows):
 def build_row(product: str):
     display = to_display_name(product)
     print(f"Checking {display}...", flush=True)
-    nuget = get_nuget_latest(product)
-    releases = get_releases_latest(product)
-    pypi = get_pypi_latest(product)
-    npm = get_npm_latest(product)
+    net = get_net_latest(product)
+    java = get_java_latest(product)
+    python_net = get_python_net_latest(product)
+    nodejs_java = get_nodejs_java_latest(product)
     print(f"Done {display}", flush=True)
     return {
         "product": display,
-        "nuget": nuget,
-        "releases": releases,
-        "pypi": pypi,
-        "npm": npm,
+        "net": net,
+        "java": java,
+        "python-net": python_net,
+        "nodejs-java": nodejs_java,
     }
 
 
-def build_nuget_only_row(package_id: str, display_name: str):
-    print(f"Checking {display_name} (NuGet only)...", flush=True)
-    nuget = get_nuget_latest("", package_id=package_id)
+def build_net_only_row(package_id: str, display_name: str):
+    print(f"Checking {display_name} (.NET only)...", flush=True)
+    net = get_net_latest("", package_id=package_id)
     print(f"Done {display_name}", flush=True)
     return {
         "product": display_name,
-        "nuget": nuget,
-        "releases": None,
-        "pypi": None,
-        "npm": None,
-        "nuget_package_id": package_id,
+        "net": net,
+        "java": None,
+        "python-net": None,
+        "nodejs-java": None,
+        "net_package_id": package_id,
     }
 
 
 def main():
     main_rows = []
-    additional_rows = []
+    derived_rows = []
     # Parallelize across products for speed
     main_tasks = {}
-    additional_tasks = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=min(16, len(PRODUCTS) + len(ADDITIONAL_NUGET_PRODUCTS) or 1)) as ex:
+    derived_tasks = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(16, len(MAIN_PRODUCTS) + len(DERIVED_PRODUCTS) or 1)) as ex:
         # Submit regular products
-        for p in PRODUCTS:
+        for p in MAIN_PRODUCTS:
             main_tasks[ex.submit(build_row, p)] = "main"
-        # Submit additional NuGet-only products
-        for package_id, display_name in ADDITIONAL_NUGET_PRODUCTS.items():
-            additional_tasks[ex.submit(build_nuget_only_row, package_id, display_name)] = "additional"
+        # Submit additional .NET-only products
+        for package_id, display_name in DERIVED_PRODUCTS.items():
+            derived_tasks[ex.submit(build_net_only_row, package_id, display_name)] = "derived"
         # Collect results
         for fut in concurrent.futures.as_completed(main_tasks):
             main_rows.append(fut.result())
-        for fut in concurrent.futures.as_completed(additional_tasks):
-            additional_rows.append(fut.result())
+        for fut in concurrent.futures.as_completed(derived_tasks):
+            derived_rows.append(fut.result())
     main_rows.sort(key=lambda r: r["product"])
     # Sort additional products: UI first, then CLI, alphabetically within each type
-    def additional_sort_key(r):
+    def derived_sort_key(r):
         product_name = r["product"]
         # Check if it's a UI product (ends with .UI or contains .UI)
         is_ui = ".UI" in product_name or product_name.endswith("UI")
         # Return tuple: (0 for UI, 1 for CLI), then product name for alphabetical sorting
         return (0 if is_ui else 1, product_name)
-    additional_rows.sort(key=additional_sort_key)
+    derived_rows.sort(key=derived_sort_key)
 
     now = datetime.datetime.now(datetime.UTC).isoformat() + "Z"
     heading = (
         "# GroupDocs Product Versions (Latest)\n\n"
         f"Generated on {now}\n\n"
-        "Source: https://releases.groupdocs.com/\n\n"
     )
     
     # Generate two separate tables with headers
     main_table = markdown_table(main_rows)
-    additional_table = markdown_table(additional_rows)
+    derived_table = markdown_table(derived_rows)
     
-    content = heading + "## Main Products\n\n" + main_table + "\n\n## Derived Products\n\n" + additional_table + "\n"
+    content = heading + "## Main Products\n\n" + main_table + "\n\n## Derived Products\n\n" + derived_table + "\n"
 
     script_dir = Path(__file__).resolve().parent
     out_path = (script_dir / "PRODUCT_VERSIONS.md").resolve()
@@ -302,11 +301,11 @@ def main():
     print("\nMain Products:\n")
     print(console_table(main_rows))
     print("\nDerived Products:\n")
-    print(console_table(additional_rows))
+    print(console_table(derived_rows))
 
     # Write JSON state for automation workflows (combined for change detection)
-    all_rows = main_rows + additional_rows
-    versions_map = {r["product"]: {"nuget": r.get("nuget"), "releases": r.get("releases"), "pypi": r.get("pypi"), "npm": r.get("npm")} for r in all_rows}
+    all_rows = main_rows + derived_rows
+    versions_map = {r["product"]: {"net": r.get("net"), "java": r.get("java"), "python-net": r.get("python-net"), "nodejs-java": r.get("nodejs-java")} for r in all_rows}
     json_state = {"generatedAt": now, "versions": versions_map}
     json_path = (script_dir / "product_versions.json").resolve()
     json_path.write_text(json.dumps(json_state, indent=2, sort_keys=True) + "\n", encoding="utf-8")

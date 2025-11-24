@@ -1,137 +1,137 @@
 {
-  "generatedAt": "2025-11-22T06:22:18.012886+00:00Z",
+  "generatedAt": "2025-11-24T08:54:01.829623+00:00Z",
   "versions": {
     "Annotation": {
-      "npm": null,
-      "nuget": "25.11.0",
-      "pypi": null,
-      "releases": "25.6"
+      "java": "25.6",
+      "net": "25.11.0",
+      "nodejs-java": null,
+      "python-net": null
     },
     "Assembly": {
-      "npm": null,
-      "nuget": "25.6.0",
-      "pypi": "25.5.1",
-      "releases": "25.6"
+      "java": "25.6",
+      "net": "25.6.0",
+      "nodejs-java": null,
+      "python-net": "25.5.1"
     },
     "Classification": {
-      "npm": null,
-      "nuget": "21.1.0",
-      "pypi": null,
-      "releases": null
+      "java": null,
+      "net": "21.1.0",
+      "nodejs-java": null,
+      "python-net": null
     },
     "Comparison": {
-      "npm": "25.11.0",
-      "nuget": "25.10.0",
-      "pypi": "25.6",
-      "releases": "25.5"
+      "java": "25.5",
+      "net": "25.10.0",
+      "nodejs-java": "25.11.0",
+      "python-net": "25.6"
     },
     "Comparison.UI": {
-      "npm": null,
-      "nuget": "6.0.21",
-      "pypi": null,
-      "releases": null
+      "java": null,
+      "net": "6.0.21",
+      "nodejs-java": null,
+      "python-net": null
     },
     "Conversion": {
-      "npm": "25.4.1",
-      "nuget": "25.10.0",
-      "pypi": "24.12",
-      "releases": "25.9"
+      "java": "25.9",
+      "net": "25.10.0",
+      "nodejs-java": "25.4.1",
+      "python-net": "24.12"
     },
     "Conversion-CLI": {
-      "npm": null,
-      "nuget": "25.10.0",
-      "pypi": null,
-      "releases": null
+      "java": null,
+      "net": "25.10.0",
+      "nodejs-java": null,
+      "python-net": null
     },
     "Editor": {
-      "npm": "25.4.0",
-      "nuget": "25.11.0",
-      "pypi": null,
-      "releases": "25.3"
+      "java": "25.3",
+      "net": "25.11.0",
+      "nodejs-java": "25.4.0",
+      "python-net": null
     },
     "Editor.UI": {
-      "npm": null,
-      "nuget": "8.0.5",
-      "pypi": null,
-      "releases": null
+      "java": null,
+      "net": "8.0.5",
+      "nodejs-java": null,
+      "python-net": null
     },
     "Markdown": {
-      "npm": null,
-      "nuget": "25.9.0",
-      "pypi": null,
-      "releases": null
+      "java": null,
+      "net": "25.9.0",
+      "nodejs-java": null,
+      "python-net": null
     },
     "Merger": {
-      "npm": "24.12.0",
-      "nuget": "25.9.0",
-      "pypi": "25.3",
-      "releases": "25.9"
+      "java": "25.9",
+      "net": "25.9.0",
+      "nodejs-java": "24.12.0",
+      "python-net": "25.3"
     },
     "Metadata": {
-      "npm": "24.7.0",
-      "nuget": "25.10.0",
-      "pypi": "25.4",
-      "releases": "25.11"
+      "java": "25.11",
+      "net": "25.10.0",
+      "nodejs-java": "24.7.0",
+      "python-net": "25.4"
     },
     "Metadata-CLI": {
-      "npm": null,
-      "nuget": "25.10.0",
-      "pypi": null,
-      "releases": null
+      "java": null,
+      "net": "25.10.0",
+      "nodejs-java": null,
+      "python-net": null
     },
     "Parser": {
-      "npm": null,
-      "nuget": "25.10.1",
-      "pypi": null,
-      "releases": "25.5"
+      "java": "25.5",
+      "net": "25.10.1",
+      "nodejs-java": null,
+      "python-net": null
     },
     "Redaction": {
-      "npm": null,
-      "nuget": "25.9.0",
-      "pypi": "25.10",
-      "releases": "25.5"
+      "java": "25.5",
+      "net": "25.9.0",
+      "nodejs-java": null,
+      "python-net": "25.10"
     },
     "Search": {
-      "npm": "24.7.0",
-      "nuget": "25.11.0",
-      "pypi": null,
-      "releases": "25.4"
+      "java": "25.4",
+      "net": "25.11.0",
+      "nodejs-java": "24.7.0",
+      "python-net": null
     },
     "Signature": {
-      "npm": "24.12.0",
-      "nuget": "25.6.0",
-      "pypi": "25.4",
-      "releases": "24.7"
+      "java": "24.7",
+      "net": "25.6.0",
+      "nodejs-java": "24.12.0",
+      "python-net": "25.4"
     },
     "Total": {
-      "npm": null,
-      "nuget": "25.9.0",
-      "pypi": "25.10.0",
-      "releases": "25.10"
+      "java": "25.10",
+      "net": "25.9.0",
+      "nodejs-java": null,
+      "python-net": "25.10.0"
     },
     "Viewer": {
-      "npm": "24.8.0",
-      "nuget": "25.9.0",
-      "pypi": "24.9",
-      "releases": "25.9"
+      "java": "25.9",
+      "net": "25.9.0",
+      "nodejs-java": "24.8.0",
+      "python-net": "24.9"
     },
     "Viewer-CLI": {
-      "npm": null,
-      "nuget": "25.11.0",
-      "pypi": null,
-      "releases": null
+      "java": null,
+      "net": "25.11.0",
+      "nodejs-java": null,
+      "python-net": null
     },
     "Viewer.UI": {
-      "npm": null,
-      "nuget": "8.1.2",
-      "pypi": null,
-      "releases": null
+      "java": null,
+      "net": "8.1.2",
+      "nodejs-java": null,
+      "python-net": null
     },
     "Watermark": {
-      "npm": "25.7.0",
-      "nuget": "25.10.0",
-      "pypi": "25.3",
-      "releases": "25.9"
+      "java": "25.9",
+      "net": "25.10.0",
+      "nodejs-java": "25.7.0",
+      "python-net": "25.3"
     }
   }
 }

@@ -20,7 +20,7 @@ def build_change_markdown(old: dict, new: dict) -> str:
         o = old_versions.get(p) or {}
         n = new_versions.get(p) or {}
         changes = []
-        for src in ["nuget", "releases", "pypi", "npm"]:
+        for src in ["net", "java", "python-net", "nodejs-java"]:
             ov = o.get(src) or None
             nv = n.get(src) or None
             if ov != nv:
