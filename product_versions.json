@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-24T08:54:01.829623+00:00Z",
+  "generatedAt": "2025-11-25T06:26:33.315021+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -27,7 +27,7 @@
     },
     "Comparison.UI": {
       "java": null,
-      "net": "6.0.21",
+      "net": null,
       "nodejs-java": null,
       "python-net": null
     },
@@ -39,7 +39,7 @@
     },
     "Conversion-CLI": {
       "java": null,
-      "net": "25.10.0",
+      "net": null,
       "nodejs-java": null,
       "python-net": null
     },
@@ -51,7 +51,7 @@
     },
     "Editor.UI": {
       "java": null,
-      "net": "8.0.5",
+      "net": null,
       "nodejs-java": null,
       "python-net": null
     },
@@ -75,7 +75,7 @@
     },
     "Metadata-CLI": {
       "java": null,
-      "net": "25.10.0",
+      "net": null,
       "nodejs-java": null,
       "python-net": null
     },
@@ -117,13 +117,13 @@
     },
     "Viewer-CLI": {
       "java": null,
-      "net": "25.11.0",
+      "net": null,
       "nodejs-java": null,
       "python-net": null
     },
     "Viewer.UI": {
       "java": null,
-      "net": "8.1.2",
+      "net": null,
       "nodejs-java": null,
       "python-net": null
     },
