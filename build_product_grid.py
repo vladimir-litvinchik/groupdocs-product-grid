@@ -80,7 +80,8 @@ def safe_get_text(url: str):
 def get_net_latest(product: str, package_id: str = None):
     if package_id is None:
         package_id = f"groupdocs.{product}"
-    url = f"https://api.nuget.org/v3-flatcontainer/{package_id}/index.json"
+    normalized_package_id = package_id.lower()
+    url = f"https://api.nuget.org/v3-flatcontainer/{normalized_package_id}/index.json"
     data = safe_get_json(url)
     if not data:
         return None
@@ -252,6 +253,56 @@ def build_net_only_row(package_id: str, display_name: str):
     }
 
 
+def update_readme(script_dir: Path, main_rows: list, derived_rows: list, timestamp: str):
+    """Update README.md with the latest product versions."""
+    readme_path = (script_dir / "README.md").resolve()
+    if not readme_path.exists():
+        print(f"Warning: README.md not found at {readme_path}, skipping update")
+        return
+    
+    # Read the current README content
+    readme_content = readme_path.read_text(encoding="utf-8")
+    
+    # Find the section to replace (from "## Product Versions (Latest)" to next "##")
+    start_marker = "## Product Versions (Latest)"
+    start_idx = readme_content.find(start_marker)
+    
+    if start_idx == -1:
+        print(f"Warning: Could not find '{start_marker}' in README.md, skipping update")
+        return
+    
+    # Find the next "##" section (Requirements, Usage, Data sources, or Notes)
+    next_section_idx = len(readme_content)
+    for marker in ["\n## Requirements", "\n## Usage", "\n## Data sources", "\n## Notes"]:
+        idx = readme_content.find(marker, start_idx)
+        if idx != -1 and idx < next_section_idx:
+            next_section_idx = idx
+    
+    # Generate the new content for the Product Versions section
+    main_table = markdown_table(main_rows)
+    derived_table = markdown_table(derived_rows)
+    
+    new_section = (
+        f"## Product Versions (Latest)\n\n"
+        f"Updated on {timestamp}\n\n"
+        f"### Main Products\n\n"
+        f"{main_table}\n\n"
+        f"### Derived Products\n\n"
+        f"{derived_table}\n\n"
+    )
+    
+    # Replace the section
+    updated_content = (
+        readme_content[:start_idx] + 
+        new_section + 
+        readme_content[next_section_idx:]
+    )
+    
+    # Write back to file
+    readme_path.write_text(updated_content, encoding="utf-8")
+    print(f"Updated {readme_path}")
+
+
 def main():
     main_rows = []
     derived_rows = []
@@ -310,6 +361,9 @@ def main():
     json_path = (script_dir / "product_versions.json").resolve()
     json_path.write_text(json.dumps(json_state, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(f"Wrote {json_path}")
+    
+    # Update README.md with latest product versions
+    update_readme(script_dir, main_rows, derived_rows, now)
 
 
 if __name__ == "__main__":

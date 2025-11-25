@@ -44,17 +44,12 @@ jobs:
         run: |
           python compute_version_changes.py --old old.json --new product_versions.json --out version_changes.md
 
-      - name: Commit changes if versions updated
+      - name: Commit changes
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.WRITE_PAT }}@github.com/${{ github.repository }}.git
-          # Only commit if versions changed (ignore timestamp-only changes)
-          if ! grep -q "^### " version_changes.md; then
-            echo "No version changes detected. Skipping commit."
-            exit 0
-          fi
-          git add product_versions.json PRODUCT_VERSIONS.md || true
-          git commit -m "chore: update product versions"
+          git add product_versions.json PRODUCT_VERSIONS.md README.md || true
+          git commit -m "chore: check product versions"
           git push origin HEAD
 
