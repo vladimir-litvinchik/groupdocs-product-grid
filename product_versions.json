@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-09T06:27:12.347740+00:00Z",
+  "generatedAt": "2025-12-10T06:27:35.742742+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -111,7 +111,7 @@
     },
     "Viewer": {
       "java": "25.9",
-      "net": "25.9.0",
+      "net": "25.11.0",
       "nodejs-java": "24.8.0",
       "python-net": "24.9"
     },
