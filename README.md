@@ -11,7 +11,7 @@ Products covered: annotation, assembly, classification, comparison, conversion, 
 
 ## Product Versions (Latest)
 
-Updated on 2025-12-12T06:27:31.953699+00:00Z
+Updated on 2025-12-13T06:25:06.159561+00:00Z
 
 ### Main Products
 
@@ -32,7 +32,7 @@ Updated on 2025-12-12T06:27:31.953699+00:00Z
 | Signature | [25.6.0](https://www.nuget.org/packages/groupdocs.signature/25.6.0) | [24.7](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-signature/24.7/) | [25.4](https://pypi.org/project/groupdocs-signature-net/25.4/) | [24.12.0](https://www.npmjs.com/package/@groupdocs/groupdocs.signature/v/24.12.0) |
 | Total | [25.9.0](https://www.nuget.org/packages/groupdocs.total/25.9.0) | [25.10](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-total/25.10/) | [25.10.0](https://pypi.org/project/groupdocs-total-net/25.10.0/) |  |
 | Viewer | [25.11.0](https://www.nuget.org/packages/groupdocs.viewer/25.11.0) | [25.9](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-viewer/25.9/) | [24.9](https://pypi.org/project/groupdocs-viewer-net/24.9/) | [24.8.0](https://www.npmjs.com/package/@groupdocs/groupdocs.viewer/v/24.8.0) |
-| Watermark | [25.11.0](https://www.nuget.org/packages/groupdocs.watermark/25.11.0) | [25.9](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-watermark/25.9/) | [25.3](https://pypi.org/project/groupdocs-watermark-net/25.3/) | [25.7.0](https://www.npmjs.com/package/@groupdocs/groupdocs.watermark/v/25.7.0) |
+| Watermark | [25.11.0](https://www.nuget.org/packages/groupdocs.watermark/25.11.0) | [25.9](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-watermark/25.9/) | [25.12](https://pypi.org/project/groupdocs-watermark-net/25.12/) | [25.7.0](https://www.npmjs.com/package/@groupdocs/groupdocs.watermark/v/25.7.0) |
 
 ### Derived Products
 
