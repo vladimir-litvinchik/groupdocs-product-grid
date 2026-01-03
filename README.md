@@ -11,7 +11,7 @@ Products covered: annotation, assembly, classification, comparison, conversion, 
 
 ## Product Versions (Latest)
 
-Updated on 2026-01-02T06:28:31.775647+00:00Z
+Updated on 2026-01-03T06:26:01.790930+00:00Z
 
 ### Main Products
 
@@ -30,7 +30,7 @@ Updated on 2026-01-02T06:28:31.775647+00:00Z
 | Redaction | [25.12.0](https://www.nuget.org/packages/groupdocs.redaction/25.12.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-redaction/25.12/) | [25.10](https://pypi.org/project/groupdocs-redaction-net/25.10/) |  |
 | Search | [25.11.0](https://www.nuget.org/packages/groupdocs.search/25.11.0) | [25.4](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-search/25.4/) |  | [24.7.0](https://www.npmjs.com/package/@groupdocs/groupdocs.search/v/24.7.0) |
 | Signature | [25.12.0](https://www.nuget.org/packages/groupdocs.signature/25.12.0) | [24.7](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-signature/24.7/) | [25.4](https://pypi.org/project/groupdocs-signature-net/25.4/) | [24.12.0](https://www.npmjs.com/package/@groupdocs/groupdocs.signature/v/24.12.0) |
-| Total | [25.9.0](https://www.nuget.org/packages/groupdocs.total/25.9.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-total/25.12/) | [25.12](https://pypi.org/project/groupdocs-total-net/25.12/) |  |
+| Total | [25.11.0](https://www.nuget.org/packages/groupdocs.total/25.11.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-total/25.12/) | [25.12](https://pypi.org/project/groupdocs-total-net/25.12/) |  |
 | Viewer | [25.12.0](https://www.nuget.org/packages/groupdocs.viewer/25.12.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-viewer/25.12/) | [25.12](https://pypi.org/project/groupdocs-viewer-net/25.12/) | [24.8.0](https://www.npmjs.com/package/@groupdocs/groupdocs.viewer/v/24.8.0) |
 | Watermark | [25.11.0](https://www.nuget.org/packages/groupdocs.watermark/25.11.0) | [25.9](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-watermark/25.9/) | [25.12](https://pypi.org/project/groupdocs-watermark-net/25.12/) | [25.7.0](https://www.npmjs.com/package/@groupdocs/groupdocs.watermark/v/25.7.0) |
 
