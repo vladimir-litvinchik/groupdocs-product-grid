@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-14T06:28:39.866227+00:00Z",
+  "generatedAt": "2026-01-15T06:28:23.619966+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -130,7 +130,7 @@
     "Watermark": {
       "java": "25.9",
       "net": "25.11.0",
-      "nodejs-java": "25.7.0",
+      "nodejs-java": "26.1.0",
       "python-net": "25.12"
     }
   }
