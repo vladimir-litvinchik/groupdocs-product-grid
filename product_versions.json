@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-30T06:42:08.524473+00:00Z",
+  "generatedAt": "2026-01-31T06:33:39.480411+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -33,13 +33,13 @@
     },
     "Conversion": {
       "java": "25.12",
-      "net": "25.12.0",
+      "net": "26.1.0",
       "nodejs-java": "25.11.0",
       "python-net": "25.12"
     },
     "Conversion-CLI": {
       "java": null,
-      "net": "25.12.0",
+      "net": "26.1.0",
       "nodejs-java": null,
       "python-net": null
     },
@@ -69,7 +69,7 @@
     },
     "Metadata": {
       "java": "25.11",
-      "net": "25.10.0",
+      "net": "26.1.0",
       "nodejs-java": "24.7.0",
       "python-net": "25.10"
     },
