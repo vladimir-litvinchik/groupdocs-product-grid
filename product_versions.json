@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-04T06:45:02.635466+00:00Z",
+  "generatedAt": "2026-02-05T06:53:39.289237+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -32,7 +32,7 @@
       "python-net": null
     },
     "Conversion": {
-      "java": "25.12",
+      "java": "26.1",
       "net": "26.1.0",
       "nodejs-java": "25.11.0",
       "python-net": "25.12"
@@ -68,7 +68,7 @@
       "python-net": "25.3"
     },
     "Metadata": {
-      "java": "25.11",
+      "java": "26.1",
       "net": "26.1.0",
       "nodejs-java": "24.7.0",
       "python-net": "25.10"
@@ -107,7 +107,7 @@
       "java": "25.12",
       "net": "25.12.0",
       "nodejs-java": null,
-      "python-net": "25.12"
+      "python-net": "26.1.0"
     },
     "Viewer": {
       "java": "25.12",
