@@ -1,6 +1,6 @@
 # GroupDocs Product Versions (Latest)
 
-Generated on 2026-02-05T06:53:39.289237+00:00Z
+Generated on 2026-02-06T06:49:14.282563+00:00Z
 
 ## Main Products
 
@@ -14,7 +14,7 @@ Generated on 2026-02-05T06:53:39.289237+00:00Z
 | Editor | [25.12.0](https://www.nuget.org/packages/groupdocs.editor/25.12.0) | [25.3](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-editor/25.3/) |  | [25.4.0](https://www.npmjs.com/package/@groupdocs/groupdocs.editor/v/25.4.0) |
 | Markdown | [26.1.0](https://www.nuget.org/packages/groupdocs.markdown/26.1.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-markdown/25.12/) |  |  |
 | Merger | [25.11.0](https://www.nuget.org/packages/groupdocs.merger/25.11.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-merger/25.12/) | [25.3](https://pypi.org/project/groupdocs-merger-net/25.3/) | [24.12.0](https://www.npmjs.com/package/@groupdocs/groupdocs.merger/v/24.12.0) |
-| Metadata | [26.1.0](https://www.nuget.org/packages/groupdocs.metadata/26.1.0) | [26.1](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-metadata/26.1/) | [25.10](https://pypi.org/project/groupdocs-metadata-net/25.10/) | [24.7.0](https://www.npmjs.com/package/@groupdocs/groupdocs.metadata/v/24.7.0) |
+| Metadata | [26.1.0](https://www.nuget.org/packages/groupdocs.metadata/26.1.0) | [26.1](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-metadata/26.1/) | [25.10](https://pypi.org/project/groupdocs-metadata-net/25.10/) | [26.2.0](https://www.npmjs.com/package/@groupdocs/groupdocs.metadata/v/26.2.0) |
 | Parser | [25.12.1](https://www.nuget.org/packages/groupdocs.parser/25.12.1) | [25.5](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-parser/25.5/) | [0.0.0](https://pypi.org/project/groupdocs-parser-net/0.0.0/) |  |
 | Redaction | [25.12.0](https://www.nuget.org/packages/groupdocs.redaction/25.12.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-redaction/25.12/) | [25.10](https://pypi.org/project/groupdocs-redaction-net/25.10/) |  |
 | Search | [25.11.0](https://www.nuget.org/packages/groupdocs.search/25.11.0) | [25.4](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-search/25.4/) |  | [24.7.0](https://www.npmjs.com/package/@groupdocs/groupdocs.search/v/24.7.0) |
