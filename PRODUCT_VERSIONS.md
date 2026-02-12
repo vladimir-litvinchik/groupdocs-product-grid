@@ -1,6 +1,6 @@
 # GroupDocs Product Versions (Latest)
 
-Generated on 2026-02-11T06:56:49.862935+00:00Z
+Generated on 2026-02-12T06:57:10.779268+00:00Z
 
 ## Main Products
 
@@ -29,7 +29,7 @@ Generated on 2026-02-11T06:56:49.862935+00:00Z
 | --- | :---: | :---: | :---: | :---: |
 | Comparison.UI | [6.0.21](https://www.nuget.org/packages/GroupDocs.Comparison.UI/6.0.21) |  |  |  |
 | Editor.UI | [8.0.5](https://www.nuget.org/packages/GroupDocs.Editor.UI.Api/8.0.5) |  |  |  |
-| Viewer.UI | [8.1.2](https://www.nuget.org/packages/GroupDocs.Viewer.UI/8.1.2) |  |  |  |
+| Viewer.UI | [8.1.3](https://www.nuget.org/packages/GroupDocs.Viewer.UI/8.1.3) |  |  |  |
 | Conversion-CLI | [26.1.0](https://www.nuget.org/packages/GroupDocs.Conversion-CLI/26.1.0) |  |  |  |
 | Metadata-CLI | [25.10.0](https://www.nuget.org/packages/GroupDocs.Metadata-CLI/25.10.0) |  |  |  |
 | Viewer-CLI | [25.12.0](https://www.nuget.org/packages/GroupDocs.Viewer-CLI/25.12.0) |  |  |  |
