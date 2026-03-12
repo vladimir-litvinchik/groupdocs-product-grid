@@ -1,6 +1,6 @@
 # GroupDocs Product Versions (Latest)
 
-Generated on 2026-03-11T06:46:41.902337+00:00Z
+Generated on 2026-03-12T06:49:54.777616+00:00Z
 
 ## Main Products
 
@@ -19,7 +19,7 @@ Generated on 2026-03-11T06:46:41.902337+00:00Z
 | Redaction | [25.12.0](https://www.nuget.org/packages/groupdocs.redaction/25.12.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-redaction/25.12/) | [25.10](https://pypi.org/project/groupdocs-redaction-net/25.10/) |  |
 | Search | [25.11.0](https://www.nuget.org/packages/groupdocs.search/25.11.0) | [25.4](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-search/25.4/) |  | [24.7.0](https://www.npmjs.com/package/@groupdocs/groupdocs.search/v/24.7.0) |
 | Signature | [26.2.0](https://www.nuget.org/packages/groupdocs.signature/26.2.0) | [24.7](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-signature/24.7/) | [26.1](https://pypi.org/project/groupdocs-signature-net/26.1/) | [24.12.0](https://www.npmjs.com/package/@groupdocs/groupdocs.signature/v/24.12.0) |
-| Total | [25.12.0](https://www.nuget.org/packages/groupdocs.total/25.12.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-total/25.12/) | [26.1.0](https://pypi.org/project/groupdocs-total-net/26.1.0/) |  |
+| Total | [25.12.0](https://www.nuget.org/packages/groupdocs.total/25.12.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-total/25.12/) | [26.3](https://pypi.org/project/groupdocs-total-net/26.3/) |  |
 | Viewer | [25.12.0](https://www.nuget.org/packages/groupdocs.viewer/25.12.0) | [25.12](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-viewer/25.12/) | [25.12](https://pypi.org/project/groupdocs-viewer-net/25.12/) | [25.12.0](https://www.npmjs.com/package/@groupdocs/groupdocs.viewer/v/25.12.0) |
 | Watermark | [25.11.0](https://www.nuget.org/packages/groupdocs.watermark/25.11.0) | [25.9](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-watermark/25.9/) | [25.12](https://pypi.org/project/groupdocs-watermark-net/25.12/) | [26.1.0](https://www.npmjs.com/package/@groupdocs/groupdocs.watermark/v/26.1.0) |
 
