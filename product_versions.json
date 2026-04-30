@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-29T08:09:43.414818+00:00Z",
+  "generatedAt": "2026-04-30T08:13:59.128315+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -21,7 +21,7 @@
     },
     "Comparison": {
       "java": "26.4",
-      "net": "26.2.0",
+      "net": "26.4.0",
       "nodejs-java": "25.11.0",
       "python-net": "25.12"
     },
@@ -81,7 +81,7 @@
     },
     "Parser": {
       "java": "26.4",
-      "net": "26.3.0",
+      "net": "26.4.0",
       "nodejs-java": null,
       "python-net": "25.12"
     },
@@ -123,7 +123,7 @@
     },
     "Viewer.UI": {
       "java": null,
-      "net": "26.3.0",
+      "net": "26.4.0",
       "nodejs-java": null,
       "python-net": null
     },
