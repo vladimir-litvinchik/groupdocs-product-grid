@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T09:23:32.603694+00:00Z",
+  "generatedAt": "2026-05-21T09:33:08.904204+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -56,7 +56,7 @@
       "python-net": null
     },
     "Markdown": {
-      "java": "25.12",
+      "java": "26.5",
       "net": "26.3.0",
       "nodejs-java": null,
       "python-net": "26.3.0"
@@ -113,7 +113,7 @@
       "java": "26.3",
       "net": "26.4.0",
       "nodejs-java": "26.4.0",
-      "python-net": "26.4.0"
+      "python-net": "26.5.0"
     },
     "Viewer-CLI": {
       "java": null,
