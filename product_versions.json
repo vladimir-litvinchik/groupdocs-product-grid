@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T08:24:10.318042+00:00Z",
+  "generatedAt": "2026-05-25T09:57:50.518499+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -71,7 +71,7 @@
       "java": "26.1",
       "net": "26.5.0",
       "nodejs-java": "26.2.0",
-      "python-net": "25.10"
+      "python-net": "26.5.0"
     },
     "Metadata-CLI": {
       "java": null,
