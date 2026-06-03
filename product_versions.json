@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T10:14:57.409911+00:00Z",
+  "generatedAt": "2026-06-03T10:34:09.462023+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -47,7 +47,7 @@
       "java": "26.1",
       "net": "26.3.0",
       "nodejs-java": "26.1.0",
-      "python-net": "0.0.0"
+      "python-net": "26.5.0"
     },
     "Editor.UI": {
       "java": null,
@@ -65,7 +65,7 @@
       "java": "26.4",
       "net": "26.4.0",
       "nodejs-java": "24.12.0",
-      "python-net": "25.3"
+      "python-net": "26.6.0"
     },
     "Metadata": {
       "java": "26.1",
