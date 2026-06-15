@@ -1,12 +1,12 @@
 # GroupDocs Product Versions (Latest)
 
-Generated on 2026-06-14T09:27:45.958318+00:00Z
+Generated on 2026-06-15T11:55:36.168224+00:00Z
 
 ## Main Products
 
 | Product | .NET | Java | Python via .NET | Node.js via Java |
 | --- | :---: | :---: | :---: | :---: |
-| Annotation | [25.11.0](https://www.nuget.org/packages/groupdocs.annotation/25.11.0) | [25.6](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-annotation/25.6/) |  |  |
+| Annotation | [26.6.0](https://www.nuget.org/packages/groupdocs.annotation/26.6.0) | [25.6](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-annotation/25.6/) |  |  |
 | Assembly | [25.12.0](https://www.nuget.org/packages/groupdocs.assembly/25.12.0) | [26.1](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-assembly/26.1/) | [25.5.1](https://pypi.org/project/groupdocs-assembly-net/25.5.1/) |  |
 | Classification | [21.1.0](https://www.nuget.org/packages/groupdocs.classification/21.1.0) |  |  |  |
 | Comparison | [26.5.0](https://www.nuget.org/packages/groupdocs.comparison/26.5.0) | [26.5](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-comparison/26.5/) | [26.5.0](https://pypi.org/project/groupdocs-comparison-net/26.5.0/) | [25.11.0](https://www.npmjs.com/package/@groupdocs/groupdocs.comparison/v/25.11.0) |
