@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T11:03:44.719231+00:00Z",
+  "generatedAt": "2026-06-17T10:47:39.510194+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -104,7 +104,7 @@
       "python-net": "26.1"
     },
     "Total": {
-      "java": "26.4",
+      "java": "26.6",
       "net": "26.4.0",
       "nodejs-java": null,
       "python-net": "26.3"
