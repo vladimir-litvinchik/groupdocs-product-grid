@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T09:26:43.225011+00:00Z",
+  "generatedAt": "2026-07-01T09:38:13.080238+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -8,8 +8,8 @@
       "python-net": "0.0.0"
     },
     "Assembly": {
-      "java": "26.1",
-      "net": "25.12.0",
+      "java": "26.6",
+      "net": "26.6.0",
       "nodejs-java": null,
       "python-net": "25.5.1"
     },
@@ -39,7 +39,7 @@
     },
     "Conversion-CLI": {
       "java": null,
-      "net": "26.3.0",
+      "net": "26.6.0",
       "nodejs-java": null,
       "python-net": null
     },
