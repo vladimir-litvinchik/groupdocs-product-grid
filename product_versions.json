@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T09:38:13.080238+00:00Z",
+  "generatedAt": "2026-07-02T08:49:56.501967+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -32,7 +32,7 @@
       "python-net": null
     },
     "Conversion": {
-      "java": "26.5",
+      "java": "26.6",
       "net": "26.6.0",
       "nodejs-java": "25.11.0",
       "python-net": "26.5.0"
@@ -81,7 +81,7 @@
     },
     "Parser": {
       "java": "26.5",
-      "net": "26.4.0",
+      "net": "26.6.1",
       "nodejs-java": null,
       "python-net": "25.12"
     },
@@ -99,7 +99,7 @@
     },
     "Signature": {
       "java": "26.5",
-      "net": "26.2.0",
+      "net": "26.6.0",
       "nodejs-java": "24.12.0",
       "python-net": "26.1"
     },
