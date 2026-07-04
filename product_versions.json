@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-03T08:56:12.057765+00:00Z",
+  "generatedAt": "2026-07-04T08:31:00.338422+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
       "net": "26.6.0",
       "nodejs-java": null,
-      "python-net": "0.0.0"
+      "python-net": "26.6.0"
     },
     "Assembly": {
       "java": "26.6",
