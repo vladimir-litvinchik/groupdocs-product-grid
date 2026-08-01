@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T08:42:43.082937+00:00Z",
+  "generatedAt": "2026-08-01T08:12:55.395778+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -33,7 +33,7 @@
     },
     "Conversion": {
       "java": "26.6",
-      "net": "26.6.0",
+      "net": "26.7.0",
       "nodejs-java": "25.11.0",
       "python-net": "26.5.0"
     },
@@ -63,7 +63,7 @@
     },
     "Merger": {
       "java": "26.4",
-      "net": "26.4.0",
+      "net": "26.7.0",
       "nodejs-java": "24.12.0",
       "python-net": "26.6.0"
     },
@@ -81,7 +81,7 @@
     },
     "Parser": {
       "java": "26.5",
-      "net": "26.6.1",
+      "net": "26.7.0",
       "nodejs-java": null,
       "python-net": "25.12"
     },
