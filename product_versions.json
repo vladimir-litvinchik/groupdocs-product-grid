@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T08:12:55.395778+00:00Z",
+  "generatedAt": "2026-08-02T08:15:07.843150+00:00Z",
   "versions": {
     "Annotation": {
       "java": "25.6",
@@ -39,7 +39,7 @@
     },
     "Conversion-CLI": {
       "java": null,
-      "net": "26.6.0",
+      "net": "26.7.0",
       "nodejs-java": null,
       "python-net": null
     },
